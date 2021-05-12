@@ -1,0 +1,77 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  font-size: 75px;
+}
+
+@keyframes sceneRotate {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.scene-container {
+  width: 100%;
+  height: 100%;
+  background-color: #00796b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 800px;
+  perspective-origin: 50% calc(50% - 250px);
+}
+
+.scene {
+  width: 600px;
+  height: 600px;
+  position: relative;
+  transform-style: preserve-3d;
+  /* animation: sceneRotate 15s infinite linear; */
+}
+
+.scene-floor {
+  width: 600px;
+  height: 600px;
+  background-color: #757575;
+  position: absolute;
+  top: 425px;
+  transform: translate(0%, -50%) rotateX(90deg);
+}
+.room {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 300px;
+}
+
+.floor,
+.side-with-door,
+.side-with-window {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+}
+
+.floor {
+  transform: translate(10%, -25%) rotateX(90deg);
+  background-image: url("./assets/roomFloor.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.side-with-window {
+  transform: translate(60%, -75%) rotateY(90deg);
+  background-image: url("./assets/wallWithWindow.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.side-with-door {
+  transform: translateZ(-250px) translate(10%, -75%);
+  background-image: url("./assets/wallWithDoor.jpg");
+  background-position: center;
+  background-size: cover;
+}
