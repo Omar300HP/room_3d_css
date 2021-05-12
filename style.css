@@ -22,6 +22,11 @@ body {
   perspective: 800px;
   perspective-origin: 50% calc(50% - 250px);
 }
+.title {
+  position: absolute;
+  top: 0;
+  color: white;
+}
 
 .scene {
   width: 600px;
